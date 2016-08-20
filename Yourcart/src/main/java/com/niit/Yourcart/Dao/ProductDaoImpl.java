@@ -10,24 +10,24 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.Yourcart.model.Category;
+import com.niit.Yourcart.model.Product;
 
 
 @EnableTransactionManagement
-@Repository(value="categoryDao")
-public class CategoryDaoImpl implements CategoryDao {
+@Repository(value="productDao")
+public class ProductDaoImpl implements ProductDao {
 		@Autowired
 	private SessionFactory sessionFactory;
 		
-	public CategoryDaoImpl(SessionFactory sessionFactory){
+	public ProductDaoImpl(SessionFactory sessionFactory){
 		this.sessionFactory=sessionFactory;
 		
 	}
 	@Transactional
-	public boolean save(Category category){
+	public boolean save(Product product){
 		
 		try{
-			sessionFactory.getCurrentSession().save(category);
+			sessionFactory.getCurrentSession().save(product);
 			return true;
 		
 		} catch (Exception e) {
@@ -39,9 +39,9 @@ public class CategoryDaoImpl implements CategoryDao {
 		
 		
 	}
-	public boolean update(Category category){
+	public boolean update(Product product){
 			try {
-				sessionFactory.getCurrentSession().update(category);
+				sessionFactory.getCurrentSession().update(product);
 				return true;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -51,9 +51,9 @@ public class CategoryDaoImpl implements CategoryDao {
 			
 	}
 	
-	public boolean delete(Category category){
+	public boolean delete(Product product){
 		try {
-			sessionFactory.getCurrentSession().delete(category);
+			sessionFactory.getCurrentSession().delete(product);
 			return true;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -62,12 +62,12 @@ public class CategoryDaoImpl implements CategoryDao {
 			
 		}
 	}
-	public Category get(String id){
-		//select*from category where id=+
+	public Product get(String id){
+		//select*from product where id=+
 		
-		String hql="from category where id="+"'"+id+"'";
+		String hql="from product where id="+"'"+id+"'";
 				Query query=sessionFactory.getCurrentSession().createQuery(hql);
-				List<Category> list = query.list();
+				List<Product> list = query.list();
 				
 				if(list == null){
 					return null;
@@ -78,10 +78,10 @@ public class CategoryDaoImpl implements CategoryDao {
 				
 				
 	}
-	public List<Category> list(){
+	public List<Product> list(){
 		
 	
-		String hql="from category";
+		String hql="from product";
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table
 @Component
-public class Supplier {
+public class UserDetails {
 	@Id
  private String id;
 
