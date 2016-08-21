@@ -39,6 +39,7 @@ public class CategoryDaoImpl implements CategoryDao {
 		
 		
 	}
+	@Transactional
 	public boolean update(Category category){
 			try {
 				sessionFactory.getCurrentSession().update(category);
@@ -50,7 +51,7 @@ public class CategoryDaoImpl implements CategoryDao {
 	}
 			
 	}
-	
+	@Transactional
 	public boolean delete(Category category){
 		try {
 			sessionFactory.getCurrentSession().delete(category);
@@ -62,10 +63,11 @@ public class CategoryDaoImpl implements CategoryDao {
 			
 		}
 	}
+	@Transactional
 	public Category get(String id){
 		//select*from category where id=+
 		
-		String hql="from category where id="+"'"+id+"'";
+		String hql="from Category where id="+"'"+id+"'";
 				Query query=sessionFactory.getCurrentSession().createQuery(hql);
 				List<Category> list = query.list();
 				
@@ -78,10 +80,11 @@ public class CategoryDaoImpl implements CategoryDao {
 				
 				
 	}
+	@Transactional
 	public List<Category> list(){
 		
 	
-		String hql="from category";
+		String hql="from Category";
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();

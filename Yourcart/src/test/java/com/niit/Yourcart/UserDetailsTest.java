@@ -7,6 +7,7 @@ import com.niit.Yourcart.model.UserDetails;
 
 public class UserDetailsTest {
 public static void main(String[] args) {
+	@SuppressWarnings("resource")
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 	context.scan("com.niit");
 	context.refresh();

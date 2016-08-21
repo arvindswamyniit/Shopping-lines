@@ -8,7 +8,7 @@ import com.niit.Yourcart.model.Category;
 public class CategoryTest {
 public static void main(String[] args) {
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-	context.scan("com.niit");
+	context.scan("com.niit.Yourcart");
 	context.refresh();
 	CategoryDao CategoryDao=(CategoryDao) context.getBean("categoryDao");
 	Category Category=(Category) context.getBean("category");

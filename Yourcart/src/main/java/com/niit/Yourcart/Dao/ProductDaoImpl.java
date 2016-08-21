@@ -39,6 +39,7 @@ public class ProductDaoImpl implements ProductDao {
 		
 		
 	}
+	@Transactional
 	public boolean update(Product product){
 			try {
 				sessionFactory.getCurrentSession().update(product);
@@ -50,7 +51,7 @@ public class ProductDaoImpl implements ProductDao {
 	}
 			
 	}
-	
+	@Transactional
 	public boolean delete(Product product){
 		try {
 			sessionFactory.getCurrentSession().delete(product);
@@ -62,6 +63,7 @@ public class ProductDaoImpl implements ProductDao {
 			
 		}
 	}
+	@Transactional
 	public Product get(String id){
 		//select*from product where id=+
 		
@@ -77,7 +79,7 @@ public class ProductDaoImpl implements ProductDao {
 			
 				
 				
-	}
+	}@Transactional
 	public List<Product> list(){
 		
 	

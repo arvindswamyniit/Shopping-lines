@@ -2,8 +2,10 @@ package com.niit.Yourcart.Dao;
 
 import java.util.List;
 
-import com.niit.Yourcart.model.Category;
+import org.springframework.stereotype.Repository;
 
+import com.niit.Yourcart.model.Category;
+@Repository
 public interface CategoryDao {
 	public boolean save(Category category);
 	public boolean update(Category category);

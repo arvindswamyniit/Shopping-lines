@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.niit</groupId>
-  <artifactId>Yourcart</artifactId>
+  <artifactId>shoppingcart</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Yourcart</name>
+  <name>shoppingcart</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -40,11 +40,13 @@
     <version>4.3.2.RELEASE</version>
 </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
-    <version>4.3.5.Final</version>
+    <version>4.3.11.Final</version>
 </dependency>
+
     
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 <dependency>
