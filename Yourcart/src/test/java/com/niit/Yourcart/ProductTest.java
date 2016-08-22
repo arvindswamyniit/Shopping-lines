@@ -12,9 +12,9 @@ public static void main(String[] args) {
 	context.refresh();
 	ProductDao ProductDao=(ProductDao) context.getBean("productDao");
 	Product Product=(Product) context.getBean("product");
-	Product.setId("CG001");
-	Product.setName("CGName001");
-	Product.setDescription("CG001 descri");
+	Product.setId("PRO001");
+	Product.setName("PROName001");
+	Product.setDescription("PRO001 descri");
 	if (ProductDao.save(Product)==true) 
 	{
 		System.out.println("Product created successfully");

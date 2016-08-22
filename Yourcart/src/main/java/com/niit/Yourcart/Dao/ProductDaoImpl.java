@@ -1,5 +1,7 @@
 package com.niit.Yourcart.Dao;
 
+
+
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -67,7 +69,7 @@ public class ProductDaoImpl implements ProductDao {
 	public Product get(String id){
 		//select*from product where id=+
 		
-		String hql="from product where id="+"'"+id+"'";
+		String hql="from Product where id="+"'"+id+"'";
 				Query query=sessionFactory.getCurrentSession().createQuery(hql);
 				List<Product> list = query.list();
 				
@@ -79,11 +81,13 @@ public class ProductDaoImpl implements ProductDao {
 			
 				
 				
-	}@Transactional
+	}
+	
+	@Transactional
 	public List<Product> list(){
 		
 	
-		String hql="from product";
+		String hql="from Product";
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();

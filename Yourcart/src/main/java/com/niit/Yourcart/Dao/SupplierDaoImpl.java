@@ -65,7 +65,7 @@ public class SupplierDaoImpl implements SupplierDao {
 	public Supplier get(String id){
 		//select*from supplier where id=+
 		
-		String hql="from supplier where id="+"'"+id+"'";
+		String hql="from Supplier where id="+"'"+id+"'";
 				Query query=sessionFactory.getCurrentSession().createQuery(hql);
 				List<Supplier> list = query.list();
 				
@@ -81,7 +81,7 @@ public class SupplierDaoImpl implements SupplierDao {
 	public List<Supplier> list(){
 		
 	
-		String hql="from supplier";
+		String hql="from Supplier";
 		
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
