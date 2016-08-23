@@ -28,7 +28,7 @@ CategoryDao categoryDao;
 	}
 @Test
 public void deleteCategoryTest(){
-	category.setId("CAT_00S1");
+	category.setId("CAT_001");
 	boolean flag =categoryDao.delete(category);
 	assertEquals("deleteCategoryTest",flag,true);
 	
@@ -46,7 +46,7 @@ public void addCategoryTest()
 }
 @Test
 public void listCategoryTest(){
-	assertEquals("listCategoryTest",categoryDao.list().size(),3);
+	assertEquals("listCategoryTest",categoryDao.list().size(),2);
 }
 @Test
 public void updateCategoryTestCase(){

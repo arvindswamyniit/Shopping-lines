@@ -39,6 +39,8 @@ public class SupplierDaoImpl implements SupplierDao {
 		
 		
 	}
+	@Transactional
+
 	public boolean update(Supplier supplier){
 			try {
 				sessionFactory.getCurrentSession().update(supplier);
@@ -50,7 +52,8 @@ public class SupplierDaoImpl implements SupplierDao {
 	}
 			
 	}
-	
+	@Transactional
+
 	public boolean delete(Supplier supplier){
 		try {
 			sessionFactory.getCurrentSession().delete(supplier);
@@ -62,6 +65,8 @@ public class SupplierDaoImpl implements SupplierDao {
 			
 		}
 	}
+	@Transactional
+
 	public Supplier get(String id){
 		//select*from supplier where id=+
 		
@@ -78,6 +83,8 @@ public class SupplierDaoImpl implements SupplierDao {
 				
 				
 	}
+	@Transactional
+
 	public List<Supplier> list(){
 		
 	

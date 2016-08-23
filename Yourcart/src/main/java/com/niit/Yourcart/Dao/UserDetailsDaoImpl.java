@@ -39,6 +39,7 @@ public class UserDetailsDaoImpl implements UserDetailsDao {
 		
 		
 	}
+	@Transactional
 	public boolean update(UserDetails userDetails){
 			try {
 				sessionFactory.getCurrentSession().update(userDetails);
@@ -50,7 +51,7 @@ public class UserDetailsDaoImpl implements UserDetailsDao {
 	}
 			
 	}
-	
+	@Transactional
 	public boolean delete(UserDetails userDetails){
 		try {
 			sessionFactory.getCurrentSession().delete(userDetails);
@@ -62,6 +63,7 @@ public class UserDetailsDaoImpl implements UserDetailsDao {
 			
 		}
 	}
+	@Transactional
 	public UserDetails get(String id){
 		//select*from userDetails where id=+
 		
@@ -78,6 +80,7 @@ public class UserDetailsDaoImpl implements UserDetailsDao {
 				
 				
 	}
+	@Transactional
 	public List<UserDetails> list(){
 		
 	
