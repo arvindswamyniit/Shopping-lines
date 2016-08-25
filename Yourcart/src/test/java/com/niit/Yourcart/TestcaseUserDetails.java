@@ -37,7 +37,7 @@ public void deleteUserDetailsTest(){
 public void addUserDetailsTest()
 
 {
-	userDetails.setId("USD_002");
+	userDetails.setId("USD_003");
 	userDetails.setName("ELECTRONIC");
 	userDetails.setDescription("this is new iphone");
 	
@@ -50,7 +50,7 @@ public void listUserDetailsTest(){
 }
 @Test
 public void updateUserDetailsTestCase(){
-	userDetails.setId("USD_002");
+	userDetails.setId("USD_003");
 	userDetails.setName("GAD");
 	userDetails.setDescription("this is new iphone");
 	assertEquals("updateUserDetailsTestCase",userDetailsDao.update(userDetails),true);
@@ -59,7 +59,7 @@ public void updateUserDetailsTestCase(){
 @Test
 public void getUserDetailsTestCase(){
 
-userDetails=userDetailsDao.get("USD_002");
+userDetails=userDetailsDao.get("USD_003");
 assertEquals("updateUserDetailsTestCase",userDetails.getName(),"GAD");
 }
 }

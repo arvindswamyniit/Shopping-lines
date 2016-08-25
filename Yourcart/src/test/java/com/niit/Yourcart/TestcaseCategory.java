@@ -28,7 +28,7 @@ CategoryDao categoryDao;
 	}
 @Test
 public void deleteCategoryTest(){
-	category.setId("CAT_00S1");
+	category.setId("CAT_001");
 	boolean flag =categoryDao.delete(category);
 	assertEquals("deleteCategoryTest",flag,true);
 	
@@ -37,7 +37,7 @@ public void deleteCategoryTest(){
 public void addCategoryTest()
 
 {
-	category.setId("CAT_002");
+	category.setId("CAT_003");
 	category.setName("ELECTRONIC");
 	category.setDescription("this is new iphone");
 	
@@ -46,11 +46,11 @@ public void addCategoryTest()
 }
 @Test
 public void listCategoryTest(){
-	assertEquals("listCategoryTest",categoryDao.list().size(),3);
+	assertEquals("listCategoryTest",categoryDao.list().size(),2);
 }
 @Test
 public void updateCategoryTestCase(){
-	category.setId("CAT_002");
+	category.setId("CAT_003");
 	category.setName("GAD");
 	category.setDescription("this is new iphone");
 	assertEquals("updateCategoryTestCase",categoryDao.update(category),true);
@@ -59,7 +59,7 @@ public void updateCategoryTestCase(){
 @Test
 public void getCategoryTestCase(){
 
-category=categoryDao.get("CAT_002");
-assertEquals("updateCategoryTestCase",category.getName(),"GAD");
+category=categoryDao.get("CAT_003");
+assertEquals("updateCategoryTestCase",category.getId(),"CAT_003");
 }
 }

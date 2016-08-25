@@ -37,7 +37,7 @@ public void deleteProductTest(){
 public void addProductTest()
 
 {
-	product.setId("PRO_002");
+	product.setId("PRO_003");
 	product.setName("ELECTRONIC");
 	product.setDescription("this is new iphone");
 	
@@ -46,12 +46,12 @@ public void addProductTest()
 }
 @Test
 public void listProductTest(){
-	assertEquals("listProductTest",productDao.list().size(),3);
+	assertEquals("listProductTest",productDao.list().size(),1);
 }
 @Test
 public void updateProductTestCase(){
-	product.setId("PRO_002");
-	product.setName("htc");
+	product.setId("PRO_003");
+	product.setName("GAD");
 	product.setDescription("this is new iphone");
 	assertEquals("updateProductTestCase",productDao.update(product),true);
 	
@@ -59,7 +59,7 @@ public void updateProductTestCase(){
 @Test
 public void getProductTestCase(){
 
-product=productDao.get("PRO_002");
-assertEquals("updateProductTestCase",product.getName(),"htc");
+product=productDao.get("PRO_003");
+assertEquals("getProductTestCase",product.getName(),"GAD");
 }
 }

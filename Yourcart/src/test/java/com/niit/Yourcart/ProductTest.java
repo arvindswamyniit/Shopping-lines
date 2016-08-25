@@ -12,7 +12,7 @@ public static void main(String[] args) {
 	context.refresh();
 	ProductDao ProductDao=(ProductDao) context.getBean("productDao");
 	Product Product=(Product) context.getBean("product");
-	Product.setId("PRO001");
+	Product.setId("PRO_001");
 	Product.setName("PROName001");
 	Product.setDescription("PRO001 descri");
 	if (ProductDao.save(Product)==true) 

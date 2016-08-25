@@ -8,13 +8,13 @@ import com.niit.Yourcart.model.Category;
 public class CategoryTest {
 public static void main(String[] args) {
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-	context.scan("com.niit.Yourcart");
+	context.scan("com.niit");
 	context.refresh();
 	CategoryDao CategoryDao=(CategoryDao) context.getBean("categoryDao");
 	Category Category=(Category) context.getBean("category");
-	Category.setId("CG001");
-	Category.setName("CGName001");
-	Category.setDescription("CG001 descri");
+	Category.setId("CAT001");
+	Category.setName("CATName001");
+	Category.setDescription("CAT001 descri");
 	if (CategoryDao.save(Category)==true) 
 	{
 		System.out.println("Category created successfully");

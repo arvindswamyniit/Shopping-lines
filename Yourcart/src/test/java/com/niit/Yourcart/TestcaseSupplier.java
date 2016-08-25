@@ -37,16 +37,16 @@ public void deleteSupplierTest(){
 public void addSupplierTest()
 
 {
-	supplier.setId("SUP_002");
-	supplier.setName("ELECTRONIC");
-	supplier.setDescription("this is new iphone");
+	supplier.setId("SUP_004");
+	supplier.setName("clothes");
+	supplier.setDescription("about clothes");
 	
 	assertEquals("addSupplierTest",supplierDao.save(supplier),true);
 	
 }
 @Test
 public void listSupplierTest(){
-	assertEquals("listSupplierTest",supplierDao.list().size(),1);
+	assertEquals("listSupplierTest",supplierDao.list().size(),4);
 }
 @Test
 public void updateSupplierTestCase(){
