@@ -23,8 +23,8 @@ public class RegisterServlet extends HttpServlet {
 	{
 	try
 	{
-		Class.forName("oracle.jdbc.driver.oracledriver");
-		conn=DriverManager.getConnection("jdbc:oracle:thin;@localhost:1521:XE","system","arvind");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","arvind");
 		stmt=conn.createStatement();
 			
 		}
@@ -40,10 +40,10 @@ public class RegisterServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		String fn =request.getParameter("firstname");
 		String ln =request.getParameter("lastname");
-		String phn =request.getParameter("phone number");
-		String usrn =request.getParameter("user name");
+		String phn =request.getParameter("phonenumber");
+		String usrn =request.getParameter("username");
 		String pass =request.getParameter("password");
-		String cpass =request.getParameter("confirm password");
+		String cpass =request.getParameter("confirmpassword");
 		
 		try{
 			int i= stmt.executeUpdate("insert into register values('"+fn+"','"+ln+"','"+phn+"','"+usrn+"','"+pass+"','"+cpass+"')");
