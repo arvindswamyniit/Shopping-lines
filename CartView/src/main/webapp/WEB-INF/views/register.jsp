@@ -8,12 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+		${info }
 <form:form action="registerUser" commandName="reg">
-
-UserName:<form:input path="username"/>
-Email:<form:input path="emailId"/>
-Password:<form:password path="password"/>
+<center>
+UserName:<form:input path="username"/> <form:errors=path="username"></form:errors><br><br>
+Email:<form:input path="emailId"/> <form:errors=path="emailId"></form:errors><br><br>
+Password:<form:password path="password"/> <form:errors=path="password"></form:errors><br><br>
 <input type="submit" value="Register">
 </form:form>
+</ceter>
 </body>
 </html>

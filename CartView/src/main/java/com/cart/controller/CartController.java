@@ -1,7 +1,10 @@
 package com.cart.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,7 +13,8 @@ import com.cart.dao.RegisterDao;
 import com.cart.model.Register;
 
 @Controller
-public class CartController {
+public class CartController 
+{
 	@Autowired
 	RegisterDao registerdao;
 	
@@ -34,10 +38,18 @@ public class CartController {
 		return new ModelAndView("register","reg",reg);
 	}
 	 @RequestMapping("/registerUser")
-		public String registerUser(@ModelAttribute("reg")Register register)
-		{System.out.println("registerUser called");
+		public ModelAndView registerUser(@Valid @ModelAttribute("reg")Register register,BindingResult bindingresult)
+		
+		{
+		 
+		 if(bindingresult.hasErrors())
+		 {
+			 System.out.println("errors there");
+			 return new ModelAndView ("register()");
+		 }
+		 System.out.println("in registerUser()");
 		 	registerdao.registerUser(register);
-			return "registerUser";
+			return new ModelAndView("registerUser","info","successfully registered");
 		}
 	 
 

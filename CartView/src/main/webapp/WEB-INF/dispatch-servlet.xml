@@ -12,7 +12,9 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 <mvc:annotation-driven></mvc:annotation-driven>
 <!-- Handler Mapping -->
+ <mvc:resources location="/resources/" mapping="/resources/**" />
 <context:component-scan base-package="com.cart.controller"></context:component-scan>
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix">
     <value>/WEB-INF/views/</value>
